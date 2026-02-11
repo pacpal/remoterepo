@@ -1,0 +1,11 @@
+version: v2   # 或 v1，如果你是旧版 buf 用 v1 也行，但 v2 推荐
+
+#name: coolcar/server   # 可选，随便起个模块名，比如 buf.build/你的用户名/coolcar
+
+deps:
+  - buf.build/googleapis/googleapis   # ← 关键！添加这个依赖，Buf 会自动拉取 google/api/*.proto
+
+# 可选：lint 配置（推荐加，避免未来问题）
+lint:
+  use:
+    - DEFAULT

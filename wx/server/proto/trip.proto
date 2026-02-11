@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package coolcar;
+
+import "google/api/annotations.proto"; 
+
+option go_package = "coolcar/server/proto/gen/go;trippb";
+
+enum Status{
+    NO_REPLY=0;
+    CONNECTED=1;
+    CONNECTING=2;
+    OVER=3;
+}
+message Location {
+    double latitude=1;
+    double longtitude=2;
+}
+message Trip{
+    string start=1;
+    string end=2;
+    Location start_pos=5;
+    repeated Location path_location=7;
+    Location end_pos=6;
+    int64 duration_sec=3;
+    int64 fee_cent=4;
+    Status status=8;
+} 
+message GetTripRequest{
+    string id=1;
+}
+message GetTripResponse {
+    string id=1;
+    Trip trip=2;
+}
+//it do trip services
+service TripService{
+    // GetTrip retrieves a trip by its unique identifier.
+    rpc GetTrip(GetTripRequest)returns(GetTripResponse){
+        option (google.api.http) = {
+          get: "/trip/{id}"
+        };
+    }
+}
