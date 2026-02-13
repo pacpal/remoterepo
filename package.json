@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "miniprogram-api-typings": "^5.0.1",
+    "protobufjs": "^8.0.0"
+  }
+}

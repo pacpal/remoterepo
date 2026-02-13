@@ -1,0 +1,18 @@
+# 忽略依赖
+node_modules/
+
+# 忽略 IDE 配置
+.vs/
+.vscode/
+project.private.config.json
+
+# 忽略小程序自动生成的 JS（关键：只保留 TS 源码）
+# 排除 proto_gen 目录，因为那里生成的 JS 是给 TS 调用的底层，建议保留
+wx/miniprogram/**/*.js
+!wx/miniprogram/service/proto_gen/**/*.js
+
+# 忽略重复的副本
+remoterepo/
+
+# 忽略编译日志
+npm-debug.log*
