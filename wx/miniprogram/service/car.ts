@@ -1,4 +1,4 @@
-import camelcaseKeys = require("camelcase-keys");
+import camelcaseKeys from "camelcase-keys"
 import { car } from "./proto_gen/car/car_pb";
 import { Coolcar } from "./request";
 

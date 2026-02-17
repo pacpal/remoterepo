@@ -1,0 +1,25 @@
+syntax ="proto3";
+package auth.v2;
+option go_package="coolcar/auth/api/gen/v2;authpb";
+
+import "google/api/annotations.proto";
+
+message LoginRequest {
+    string code =1; 
+}
+message LoginResponse{
+    string access_token =1;
+    int32 expires_in = 2;
+}
+
+// AuthService 定义了用户认证相关的接口。
+service AuthService{
+    // Login 允许用户通过微信小程序传回的 code 进行登录。
+    // 它会返回一个 JWT 令牌供后续调用使用。
+    rpc Login (LoginRequest) returns(LoginResponse){
+        option (google.api.http)={
+            post: "/v2/auth/login"
+            body: "*"
+        };
+    }
+}

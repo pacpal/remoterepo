@@ -2,7 +2,7 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "noImplicitAny": true,
-    "module": "CommonJS",
+    "module": "esnext",
     "target": "ES6",
     "allowJs": false,
     "experimentalDecorators": true,
@@ -20,9 +20,12 @@
     "removeComments": true,
     "pretty": true,
     "strictPropertyInitialization": true,
-    "lib": ["es6",
+    "forceConsistentCasingInFileNames":true,
+    "lib": ["es2020",
     ],
-    "types": ["miniprogram-api-typings"]
+    "types": [
+      "miniprogram-api-typings",
+    ],
   },
   "include": [
     "./**/*.ts"

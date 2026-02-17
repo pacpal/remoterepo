@@ -1,266 +1,52 @@
-import * as $protobuf from "protobufjs";
-
-// Common aliases
-const $util = $protobuf.util;
-
-// Exported root namespace
-const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
-
-export const auth = $root.auth = (() => {
-
-    /**
-     * Namespace auth.
-     * @exports auth
-     * @namespace
-     */
-    const auth = {};
-
-    auth.v1 = (function() {
-
-        /**
-         * Namespace v1.
-         * @memberof auth
-         * @namespace
-         */
-        const v1 = {};
-
-        v1.LoginRequest = (function() {
-
-            /**
-             * Properties of a LoginRequest.
-             * @memberof auth.v1
-             * @interface ILoginRequest
-             * @property {string|null} [code] LoginRequest code
-             */
-
-            /**
-             * Constructs a new LoginRequest.
-             * @memberof auth.v1
-             * @classdesc Represents a LoginRequest.
-             * @implements ILoginRequest
-             * @constructor
-             * @param {auth.v1.ILoginRequest=} [properties] Properties to set
-             */
-            function LoginRequest(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * LoginRequest code.
-             * @member {string} code
-             * @memberof auth.v1.LoginRequest
-             * @instance
-             */
-            LoginRequest.prototype.code = "";
-
-            /**
-             * Creates a LoginRequest message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof auth.v1.LoginRequest
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {auth.v1.LoginRequest} LoginRequest
-             */
-            LoginRequest.fromObject = function fromObject(object) {
-                if (object instanceof $root.auth.v1.LoginRequest)
-                    return object;
-                let message = new $root.auth.v1.LoginRequest();
-                if (object.code != null)
-                    message.code = String(object.code);
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a LoginRequest message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof auth.v1.LoginRequest
-             * @static
-             * @param {auth.v1.LoginRequest} message LoginRequest
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            LoginRequest.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                let object = {};
-                if (options.defaults)
-                    object.code = "";
-                if (message.code != null && message.hasOwnProperty("code"))
-                    object.code = message.code;
-                return object;
-            };
-
-            /**
-             * Converts this LoginRequest to JSON.
-             * @function toJSON
-             * @memberof auth.v1.LoginRequest
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            LoginRequest.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            return LoginRequest;
-        })();
-
-        v1.LoginResponse = (function() {
-
-            /**
-             * Properties of a LoginResponse.
-             * @memberof auth.v1
-             * @interface ILoginResponse
-             * @property {string|null} [accessToken] LoginResponse accessToken
-             * @property {number|null} [expiresIn] LoginResponse expiresIn
-             */
-
-            /**
-             * Constructs a new LoginResponse.
-             * @memberof auth.v1
-             * @classdesc Represents a LoginResponse.
-             * @implements ILoginResponse
-             * @constructor
-             * @param {auth.v1.ILoginResponse=} [properties] Properties to set
-             */
-            function LoginResponse(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * LoginResponse accessToken.
-             * @member {string} accessToken
-             * @memberof auth.v1.LoginResponse
-             * @instance
-             */
-            LoginResponse.prototype.accessToken = "";
-
-            /**
-             * LoginResponse expiresIn.
-             * @member {number} expiresIn
-             * @memberof auth.v1.LoginResponse
-             * @instance
-             */
-            LoginResponse.prototype.expiresIn = 0;
-
-            /**
-             * Creates a LoginResponse message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof auth.v1.LoginResponse
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {auth.v1.LoginResponse} LoginResponse
-             */
-            LoginResponse.fromObject = function fromObject(object) {
-                if (object instanceof $root.auth.v1.LoginResponse)
-                    return object;
-                let message = new $root.auth.v1.LoginResponse();
-                if (object.accessToken != null)
-                    message.accessToken = String(object.accessToken);
-                if (object.expiresIn != null)
-                    message.expiresIn = object.expiresIn | 0;
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a LoginResponse message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof auth.v1.LoginResponse
-             * @static
-             * @param {auth.v1.LoginResponse} message LoginResponse
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            LoginResponse.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                let object = {};
-                if (options.defaults) {
-                    object.accessToken = "";
-                    object.expiresIn = 0;
-                }
-                if (message.accessToken != null && message.hasOwnProperty("accessToken"))
-                    object.accessToken = message.accessToken;
-                if (message.expiresIn != null && message.hasOwnProperty("expiresIn"))
-                    object.expiresIn = message.expiresIn;
-                return object;
-            };
-
-            /**
-             * Converts this LoginResponse to JSON.
-             * @function toJSON
-             * @memberof auth.v1.LoginResponse
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            LoginResponse.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            return LoginResponse;
-        })();
-
-        v1.AuthService = (function() {
-
-            /**
-             * Constructs a new AuthService service.
-             * @memberof auth.v1
-             * @classdesc Represents an AuthService
-             * @extends $protobuf.rpc.Service
-             * @constructor
-             * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
-             * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
-             * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-             */
-            function AuthService(rpcImpl, requestDelimited, responseDelimited) {
-                $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
-            }
-
-            (AuthService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = AuthService;
-
-            /**
-             * Callback as used by {@link auth.v1.AuthService#login}.
-             * @memberof auth.v1.AuthService
-             * @typedef LoginCallback
-             * @type {function}
-             * @param {Error|null} error Error, if any
-             * @param {auth.v1.LoginResponse} [response] LoginResponse
-             */
-
-            /**
-             * Calls Login.
-             * @function login
-             * @memberof auth.v1.AuthService
-             * @instance
-             * @param {auth.v1.ILoginRequest} request LoginRequest message or plain object
-             * @param {auth.v1.AuthService.LoginCallback} callback Node-style callback called with the error, if any, and LoginResponse
-             * @returns {undefined}
-             * @variation 1
-             */
-            Object.defineProperty(AuthService.prototype.login = function login(request, callback) {
-                return this.rpcCall(login, $root.auth.v1.LoginRequest, $root.auth.v1.LoginResponse, request, callback);
-            }, "name", { value: "Login" });
-
-            /**
-             * Calls Login.
-             * @function login
-             * @memberof auth.v1.AuthService
-             * @instance
-             * @param {auth.v1.ILoginRequest} request LoginRequest message or plain object
-             * @returns {Promise<auth.v1.LoginResponse>} Promise
-             * @variation 2
-             */
-
-            return AuthService;
-        })();
-
-        return v1;
-    })();
-
-    return auth;
-})();
+import { proto3 } from "@bufbuild/protobuf";
+export class LoginRequest extends Message {
+    constructor(data) {
+        super();
+        this.code = "";
+        proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new LoginRequest().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new LoginRequest().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new LoginRequest().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return proto3.util.equals(LoginRequest, a, b);
+    }
+}
+LoginRequest.runtime = proto3;
+LoginRequest.typeName = "auth.v2.LoginRequest";
+LoginRequest.fields = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "scalar", T: 9 },
+]);
+export class LoginResponse extends Message {
+    constructor(data) {
+        super();
+        this.accessToken = "";
+        this.expiresIn = 0;
+        proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new LoginResponse().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new LoginResponse().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new LoginResponse().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return proto3.util.equals(LoginResponse, a, b);
+    }
+}
+LoginResponse.runtime = proto3;
+LoginResponse.typeName = "auth.v2.LoginResponse";
+LoginResponse.fields = proto3.util.newFieldList(() => [
+    { no: 1, name: "access_token", kind: "scalar", T: 9 },
+    { no: 2, name: "expires_in", kind: "scalar", T: 5 },
+]);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXV0aF9wYi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImF1dGhfcGIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBTUEsT0FBTyxFQUFXLE1BQU0sRUFBRSxNQUFNLG9CQUFvQixDQUFDO0FBS3JELE1BQU0sT0FBTyxZQUFhLFNBQVEsT0FBcUI7SUFNckQsWUFBWSxJQUFtQztRQUM3QyxLQUFLLEVBQUUsQ0FBQztRQUhWLFNBQUksR0FBRyxFQUFFLENBQUM7UUFJUixNQUFNLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEVBQUUsSUFBSSxDQUFDLENBQUM7SUFDdEMsQ0FBQztJQVFELE1BQU0sQ0FBQyxVQUFVLENBQUMsS0FBaUIsRUFBRSxPQUFvQztRQUN2RSxPQUFPLElBQUksWUFBWSxFQUFFLENBQUMsVUFBVSxDQUFDLEtBQUssRUFBRSxPQUFPLENBQUMsQ0FBQztJQUN2RCxDQUFDO0lBRUQsTUFBTSxDQUFDLFFBQVEsQ0FBQyxTQUFvQixFQUFFLE9BQWtDO1FBQ3RFLE9BQU8sSUFBSSxZQUFZLEVBQUUsQ0FBQyxRQUFRLENBQUMsU0FBUyxFQUFFLE9BQU8sQ0FBQyxDQUFDO0lBQ3pELENBQUM7SUFFRCxNQUFNLENBQUMsY0FBYyxDQUFDLFVBQWtCLEVBQUUsT0FBa0M7UUFDMUUsT0FBTyxJQUFJLFlBQVksRUFBRSxDQUFDLGNBQWMsQ0FBQyxVQUFVLEVBQUUsT0FBTyxDQUFDLENBQUM7SUFDaEUsQ0FBQztJQUVELE1BQU0sQ0FBQyxNQUFNLENBQUMsQ0FBd0QsRUFBRSxDQUF3RDtRQUM5SCxPQUFPLE1BQU0sQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDLFlBQVksRUFBRSxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUM7SUFDaEQsQ0FBQzs7QUFwQmUsb0JBQU8sR0FBa0IsTUFBTSxBQUF4QixDQUF5QjtBQUNoQyxxQkFBUSxHQUFHLHNCQUFzQixBQUF6QixDQUEwQjtBQUNsQyxtQkFBTSxHQUFjLE1BQU0sQ0FBQyxJQUFJLENBQUMsWUFBWSxDQUFDLEdBQUcsRUFBRSxDQUFDO0lBQ2pFLEVBQUUsRUFBRSxFQUFFLENBQUMsRUFBRSxJQUFJLEVBQUUsTUFBTSxFQUFFLElBQUksRUFBRSxRQUFRLEVBQUUsQ0FBQyxFQUFFLENBQUMsRUFBMEI7Q0FDdEUsQ0FBQyxBQUZvQixDQUVuQjtBQXNCTCxNQUFNLE9BQU8sYUFBYyxTQUFRLE9BQXNCO0lBV3ZELFlBQVksSUFBb0M7UUFDOUMsS0FBSyxFQUFFLENBQUM7UUFSVixnQkFBVyxHQUFHLEVBQUUsQ0FBQztRQUtqQixjQUFTLEdBQUcsQ0FBQyxDQUFDO1FBSVosTUFBTSxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsSUFBSSxFQUFFLElBQUksQ0FBQyxDQUFDO0lBQ3RDLENBQUM7SUFTRCxNQUFNLENBQUMsVUFBVSxDQUFDLEtBQWlCLEVBQUUsT0FBb0M7UUFDdkUsT0FBTyxJQUFJLGFBQWEsRUFBRSxDQUFDLFVBQVUsQ0FBQyxLQUFLLEVBQUUsT0FBTyxDQUFDLENBQUM7SUFDeEQsQ0FBQztJQUVELE1BQU0sQ0FBQyxRQUFRLENBQUMsU0FBb0IsRUFBRSxPQUFrQztRQUN0RSxPQUFPLElBQUksYUFBYSxFQUFFLENBQUMsUUFBUSxDQUFDLFNBQVMsRUFBRSxPQUFPLENBQUMsQ0FBQztJQUMxRCxDQUFDO0lBRUQsTUFBTSxDQUFDLGNBQWMsQ0FBQyxVQUFrQixFQUFFLE9BQWtDO1FBQzFFLE9BQU8sSUFBSSxhQUFhLEVBQUUsQ0FBQyxjQUFjLENBQUMsVUFBVSxFQUFFLE9BQU8sQ0FBQyxDQUFDO0lBQ2pFLENBQUM7SUFFRCxNQUFNLENBQUMsTUFBTSxDQUFDLENBQTBELEVBQUUsQ0FBMEQ7UUFDbEksT0FBTyxNQUFNLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxhQUFhLEVBQUUsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDO0lBQ2pELENBQUM7O0FBckJlLHFCQUFPLEdBQWtCLE1BQU0sQUFBeEIsQ0FBeUI7QUFDaEMsc0JBQVEsR0FBRyx1QkFBdUIsQUFBMUIsQ0FBMkI7QUFDbkMsb0JBQU0sR0FBYyxNQUFNLENBQUMsSUFBSSxDQUFDLFlBQVksQ0FBQyxHQUFHLEVBQUUsQ0FBQztJQUNqRSxFQUFFLEVBQUUsRUFBRSxDQUFDLEVBQUUsSUFBSSxFQUFFLGNBQWMsRUFBRSxJQUFJLEVBQUUsUUFBUSxFQUFFLENBQUMsRUFBRSxDQUFDLEVBQTBCO0lBQzdFLEVBQUUsRUFBRSxFQUFFLENBQUMsRUFBRSxJQUFJLEVBQUUsWUFBWSxFQUFFLElBQUksRUFBRSxRQUFRLEVBQUUsQ0FBQyxFQUFFLENBQUMsRUFBeUI7Q0FDM0UsQ0FBQyxBQUhvQixDQUduQiIsInNvdXJjZXNDb250ZW50IjpbIi8vIEBnZW5lcmF0ZWQgYnkgcHJvdG9jLWdlbi1lcyB2MS4zLjAgd2l0aCBwYXJhbWV0ZXIgXCJ0YXJnZXQ9dHNcIlxuLy8gQGdlbmVyYXRlZCBmcm9tIGZpbGUgYXV0aC5wcm90byAocGFja2FnZSBhdXRoLnYyLCBzeW50YXggcHJvdG8zKVxuLyogZXNsaW50LWRpc2FibGUgKi9cbi8vIEB0cy1ub2NoZWNrXG5cbmltcG9ydCB0eXBlIHsgQmluYXJ5UmVhZE9wdGlvbnMsIEZpZWxkTGlzdCwgSnNvblJlYWRPcHRpb25zLCBKc29uVmFsdWUsIFBhcnRpYWxNZXNzYWdlLCBQbGFpbk1lc3NhZ2UgfSBmcm9tIFwiQGJ1ZmJ1aWxkL3Byb3RvYnVmXCI7XG5pbXBvcnQgeyBNZXNzYWdlLCBwcm90bzMgfSBmcm9tIFwiQGJ1ZmJ1aWxkL3Byb3RvYnVmXCI7XG5cbi8qKlxuICogQGdlbmVyYXRlZCBmcm9tIG1lc3NhZ2UgYXV0aC52Mi5Mb2dpblJlcXVlc3RcbiAqL1xuZXhwb3J0IGNsYXNzIExvZ2luUmVxdWVzdCBleHRlbmRzIE1lc3NhZ2U8TG9naW5SZXF1ZXN0PiB7XG4gIC8qKlxuICAgKiBAZ2VuZXJhdGVkIGZyb20gZmllbGQ6IHN0cmluZyBjb2RlID0gMTtcbiAgICovXG4gIGNvZGUgPSBcIlwiO1xuXG4gIGNvbnN0cnVjdG9yKGRhdGE/OiBQYXJ0aWFsTWVzc2FnZTxMb2dpblJlcXVlc3Q+KSB7XG4gICAgc3VwZXIoKTtcbiAgICBwcm90bzMudXRpbC5pbml0UGFydGlhbChkYXRhLCB0aGlzKTtcbiAgfVxuXG4gIHN0YXRpYyByZWFkb25seSBydW50aW1lOiB0eXBlb2YgcHJvdG8zID0gcHJvdG8zO1xuICBzdGF0aWMgcmVhZG9ubHkgdHlwZU5hbWUgPSBcImF1dGgudjIuTG9naW5SZXF1ZXN0XCI7XG4gIHN0YXRpYyByZWFkb25seSBmaWVsZHM6IEZpZWxkTGlzdCA9IHByb3RvMy51dGlsLm5ld0ZpZWxkTGlzdCgoKSA9PiBbXG4gICAgeyBubzogMSwgbmFtZTogXCJjb2RlXCIsIGtpbmQ6IFwic2NhbGFyXCIsIFQ6IDkgLyogU2NhbGFyVHlwZS5TVFJJTkcgKi8gfSxcbiAgXSk7XG5cbiAgc3RhdGljIGZyb21CaW5hcnkoYnl0ZXM6IFVpbnQ4QXJyYXksIG9wdGlvbnM/OiBQYXJ0aWFsPEJpbmFyeVJlYWRPcHRpb25zPik6IExvZ2luUmVxdWVzdCB7XG4gICAgcmV0dXJuIG5ldyBMb2dpblJlcXVlc3QoKS5mcm9tQmluYXJ5KGJ5dGVzLCBvcHRpb25zKTtcbiAgfVxuXG4gIHN0YXRpYyBmcm9tSnNvbihqc29uVmFsdWU6IEpzb25WYWx1ZSwgb3B0aW9ucz86IFBhcnRpYWw8SnNvblJlYWRPcHRpb25zPik6IExvZ2luUmVxdWVzdCB7XG4gICAgcmV0dXJuIG5ldyBMb2dpblJlcXVlc3QoKS5mcm9tSnNvbihqc29uVmFsdWUsIG9wdGlvbnMpO1xuICB9XG5cbiAgc3RhdGljIGZyb21Kc29uU3RyaW5nKGpzb25TdHJpbmc6IHN0cmluZywgb3B0aW9ucz86IFBhcnRpYWw8SnNvblJlYWRPcHRpb25zPik6IExvZ2luUmVxdWVzdCB7XG4gICAgcmV0dXJuIG5ldyBMb2dpblJlcXVlc3QoKS5mcm9tSnNvblN0cmluZyhqc29uU3RyaW5nLCBvcHRpb25zKTtcbiAgfVxuXG4gIHN0YXRpYyBlcXVhbHMoYTogTG9naW5SZXF1ZXN0IHwgUGxhaW5NZXNzYWdlPExvZ2luUmVxdWVzdD4gfCB1bmRlZmluZWQsIGI6IExvZ2luUmVxdWVzdCB8IFBsYWluTWVzc2FnZTxMb2dpblJlcXVlc3Q+IHwgdW5kZWZpbmVkKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHByb3RvMy51dGlsLmVxdWFscyhMb2dpblJlcXVlc3QsIGEsIGIpO1xuICB9XG59XG5cbi8qKlxuICogQGdlbmVyYXRlZCBmcm9tIG1lc3NhZ2UgYXV0aC52Mi5Mb2dpblJlc3BvbnNlXG4gKi9cbmV4cG9ydCBjbGFzcyBMb2dpblJlc3BvbnNlIGV4dGVuZHMgTWVzc2FnZTxMb2dpblJlc3BvbnNlPiB7XG4gIC8qKlxuICAgKiBAZ2VuZXJhdGVkIGZyb20gZmllbGQ6IHN0cmluZyBhY2Nlc3NfdG9rZW4gPSAxO1xuICAgKi9cbiAgYWNjZXNzVG9rZW4gPSBcIlwiO1xuXG4gIC8qKlxuICAgKiBAZ2VuZXJhdGVkIGZyb20gZmllbGQ6IGludDMyIGV4cGlyZXNfaW4gPSAyO1xuICAgKi9cbiAgZXhwaXJlc0luID0gMDtcblxuICBjb25zdHJ1Y3RvcihkYXRhPzogUGFydGlhbE1lc3NhZ2U8TG9naW5SZXNwb25zZT4pIHtcbiAgICBzdXBlcigpO1xuICAgIHByb3RvMy51dGlsLmluaXRQYXJ0aWFsKGRhdGEsIHRoaXMpO1xuICB9XG5cbiAgc3RhdGljIHJlYWRvbmx5IHJ1bnRpbWU6IHR5cGVvZiBwcm90bzMgPSBwcm90bzM7XG4gIHN0YXRpYyByZWFkb25seSB0eXBlTmFtZSA9IFwiYXV0aC52Mi5Mb2dpblJlc3BvbnNlXCI7XG4gIHN0YXRpYyByZWFkb25seSBmaWVsZHM6IEZpZWxkTGlzdCA9IHByb3RvMy51dGlsLm5ld0ZpZWxkTGlzdCgoKSA9PiBbXG4gICAgeyBubzogMSwgbmFtZTogXCJhY2Nlc3NfdG9rZW5cIiwga2luZDogXCJzY2FsYXJcIiwgVDogOSAvKiBTY2FsYXJUeXBlLlNUUklORyAqLyB9LFxuICAgIHsgbm86IDIsIG5hbWU6IFwiZXhwaXJlc19pblwiLCBraW5kOiBcInNjYWxhclwiLCBUOiA1IC8qIFNjYWxhclR5cGUuSU5UMzIgKi8gfSxcbiAgXSk7XG5cbiAgc3RhdGljIGZyb21CaW5hcnkoYnl0ZXM6IFVpbnQ4QXJyYXksIG9wdGlvbnM/OiBQYXJ0aWFsPEJpbmFyeVJlYWRPcHRpb25zPik6IExvZ2luUmVzcG9uc2Uge1xuICAgIHJldHVybiBuZXcgTG9naW5SZXNwb25zZSgpLmZyb21CaW5hcnkoYnl0ZXMsIG9wdGlvbnMpO1xuICB9XG5cbiAgc3RhdGljIGZyb21Kc29uKGpzb25WYWx1ZTogSnNvblZhbHVlLCBvcHRpb25zPzogUGFydGlhbDxKc29uUmVhZE9wdGlvbnM+KTogTG9naW5SZXNwb25zZSB7XG4gICAgcmV0dXJuIG5ldyBMb2dpblJlc3BvbnNlKCkuZnJvbUpzb24oanNvblZhbHVlLCBvcHRpb25zKTtcbiAgfVxuXG4gIHN0YXRpYyBmcm9tSnNvblN0cmluZyhqc29uU3RyaW5nOiBzdHJpbmcsIG9wdGlvbnM/OiBQYXJ0aWFsPEpzb25SZWFkT3B0aW9ucz4pOiBMb2dpblJlc3BvbnNlIHtcbiAgICByZXR1cm4gbmV3IExvZ2luUmVzcG9uc2UoKS5mcm9tSnNvblN0cmluZyhqc29uU3RyaW5nLCBvcHRpb25zKTtcbiAgfVxuXG4gIHN0YXRpYyBlcXVhbHMoYTogTG9naW5SZXNwb25zZSB8IFBsYWluTWVzc2FnZTxMb2dpblJlc3BvbnNlPiB8IHVuZGVmaW5lZCwgYjogTG9naW5SZXNwb25zZSB8IFBsYWluTWVzc2FnZTxMb2dpblJlc3BvbnNlPiB8IHVuZGVmaW5lZCk6IGJvb2xlYW4ge1xuICAgIHJldHVybiBwcm90bzMudXRpbC5lcXVhbHMoTG9naW5SZXNwb25zZSwgYSwgYik7XG4gIH1cbn1cblxuIl19

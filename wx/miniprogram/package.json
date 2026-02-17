@@ -4,17 +4,17 @@
   "description": "",
   "scripts": {
     "tsc": "tsc",
-    "proto:gen": "pbjs -t static-module -w es6 --no-create --no-encode --no-decode -o ./service/proto_gen/trip/trip_pb.js ../server/proto/trip.proto && pbts -o ./service/proto_gen/trip/trip_pb.d.ts ./service/proto_gen/trip/trip_pb.js"
+    "proto:gen": "pbjs -t static-module -w es6 --force-number --no-create --no-encode --no-decode -o ./service/proto_gen/trip/trip_pb.js ../server/proto/trip.proto && pbts -o ./service/proto_gen/trip/trip_pb.d.ts ./service/proto_gen/trip/trip_pb.js"
   },
   "keywords": [],
   "author": "",
   "license": "",
   "dependencies": {
-    "camelcase-keys": "^6.2.2",
-    "protobufjs": "^6.11.4"
+    "camelcase-keys": "^10.0.2",
+    "@bufbuild/protobuf":"^2.11.0"
   },
   "devDependencies": {
-    "miniprogram-api-typings": "^2.12.0",
-    "typescript": "^3.3.3333"
+    "miniprogram-api-typings": "^5.0.1",
+    "typescript": "^5.9.3"
   }
 }

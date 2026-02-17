@@ -83,10 +83,10 @@ export namespace coolcar {
         endPos?: (coolcar.ILocation|null);
 
         /** Trip durationSec */
-        durationSec?: (number|Long|null);
+        durationSec?: (number|null);
 
         /** Trip feeCent */
-        feeCent?: (number|Long|null);
+        feeCent?: (number|null);
 
         /** Trip status */
         status?: (coolcar.Status|null);
@@ -117,10 +117,10 @@ export namespace coolcar {
         public endPos?: (coolcar.ILocation|null);
 
         /** Trip durationSec. */
-        public durationSec: (number|Long);
+        public durationSec: number;
 
         /** Trip feeCent. */
-        public feeCent: (number|Long);
+        public feeCent: number;
 
         /** Trip status. */
         public status: coolcar.Status;
@@ -1923,10 +1923,10 @@ export namespace google {
             identifierValue?: (string|null);
 
             /** UninterpretedOption positiveIntValue */
-            positiveIntValue?: (number|Long|null);
+            positiveIntValue?: (number|null);
 
             /** UninterpretedOption negativeIntValue */
-            negativeIntValue?: (number|Long|null);
+            negativeIntValue?: (number|null);
 
             /** UninterpretedOption doubleValue */
             doubleValue?: (number|null);
@@ -1954,10 +1954,10 @@ export namespace google {
             public identifierValue: string;
 
             /** UninterpretedOption positiveIntValue. */
-            public positiveIntValue: (number|Long);
+            public positiveIntValue: number;
 
             /** UninterpretedOption negativeIntValue. */
-            public negativeIntValue: (number|Long);
+            public negativeIntValue: number;
 
             /** UninterpretedOption doubleValue. */
             public doubleValue: number;

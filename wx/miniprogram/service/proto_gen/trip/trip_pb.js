@@ -163,8 +163,8 @@ export const coolcar = $root.coolcar = (() => {
          * @property {coolcar.ILocation|null} [startPos] Trip startPos
          * @property {Array.<coolcar.ILocation>|null} [pathLocation] Trip pathLocation
          * @property {coolcar.ILocation|null} [endPos] Trip endPos
-         * @property {number|Long|null} [durationSec] Trip durationSec
-         * @property {number|Long|null} [feeCent] Trip feeCent
+         * @property {number|null} [durationSec] Trip durationSec
+         * @property {number|null} [feeCent] Trip feeCent
          * @property {coolcar.Status|null} [status] Trip status
          */
 
@@ -226,7 +226,7 @@ export const coolcar = $root.coolcar = (() => {
 
         /**
          * Trip durationSec.
-         * @member {number|Long} durationSec
+         * @member {number} durationSec
          * @memberof coolcar.Trip
          * @instance
          */
@@ -234,7 +234,7 @@ export const coolcar = $root.coolcar = (() => {
 
         /**
          * Trip feeCent.
-         * @member {number|Long} feeCent
+         * @member {number} feeCent
          * @memberof coolcar.Trip
          * @instance
          */
@@ -5259,8 +5259,8 @@ export const google = $root.google = (() => {
              * @interface IUninterpretedOption
              * @property {Array.<google.protobuf.UninterpretedOption.INamePart>|null} [name] UninterpretedOption name
              * @property {string|null} [identifierValue] UninterpretedOption identifierValue
-             * @property {number|Long|null} [positiveIntValue] UninterpretedOption positiveIntValue
-             * @property {number|Long|null} [negativeIntValue] UninterpretedOption negativeIntValue
+             * @property {number|null} [positiveIntValue] UninterpretedOption positiveIntValue
+             * @property {number|null} [negativeIntValue] UninterpretedOption negativeIntValue
              * @property {number|null} [doubleValue] UninterpretedOption doubleValue
              * @property {Uint8Array|null} [stringValue] UninterpretedOption stringValue
              * @property {string|null} [aggregateValue] UninterpretedOption aggregateValue
@@ -5300,7 +5300,7 @@ export const google = $root.google = (() => {
 
             /**
              * UninterpretedOption positiveIntValue.
-             * @member {number|Long} positiveIntValue
+             * @member {number} positiveIntValue
              * @memberof google.protobuf.UninterpretedOption
              * @instance
              */
@@ -5308,7 +5308,7 @@ export const google = $root.google = (() => {
 
             /**
              * UninterpretedOption negativeIntValue.
-             * @member {number|Long} negativeIntValue
+             * @member {number} negativeIntValue
              * @memberof google.protobuf.UninterpretedOption
              * @instance
              */

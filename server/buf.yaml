@@ -1,0 +1,9 @@
+version: v2
+modules:
+  - path: auth/api
+    name: buf.build/coolcar/auth
+deps:
+  - buf.build/googleapis/googleapis
+breaking:
+  use:
+    - FILE

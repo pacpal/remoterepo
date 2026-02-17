@@ -1,0 +1,25 @@
+version: v2
+plugins:
+  # 1. 生成 Go 基础代码
+  - remote: buf.build/protocolbuffers/go
+    out: .                                 # 关键修改 1：输出到当前根目录
+    opt: module=coolcar                    # 关键修改 2：去除 go_package 里的 coolcar 前缀
+
+  # 2. 生成 Go gRPC 代码
+  - remote: buf.build/grpc/go
+    out: .
+    opt: module=coolcar
+
+  # 3. 生成 gRPC-Gateway
+  - remote: buf.build/grpc-ecosystem/gateway
+    out: .
+    opt: module=coolcar
+
+  # 4. 生成前端 TS 代码
+  - remote: buf.build/bufbuild/es:v1.3.0  # 显式指定稳定版本
+    out:  ../wx/miniprogram/service/proto_gen/auth
+    opt:
+    - target=ts                          # 必须：生成 TypeScript
+    #- import_extension=.ts               # 小程序需显式 .ts 扩展名
+    #- ts_nocheck                         # 可选：添加 // @ts-nocheck 避免类型报错
+    # - env=web                          # 如需浏览器环境优化可启用

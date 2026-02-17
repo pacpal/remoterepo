@@ -89,7 +89,7 @@ Page({
 
     onLoad() {
         const layoutReady = new Promise((resolve) => {
-            this.layoutResolver = resolve
+            this.layoutResolver = resolve as (value?: unknown) => void;
         })
         Promise.all([TripService.getTrips(), layoutReady]).then(([trips]) => {
             this.populateTrips(trips.trips!)
